@@ -6,7 +6,7 @@
 /*   By: rlkcmptr <rlkcmptr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 03:23:59 by rlkcmptr          #+#    #+#             */
-/*   Updated: 2017/05/10 18:40:57 by jecarol          ###   ########.fr       */
+/*   Updated: 2017/05/16 22:24:45 by jecarol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,18 @@ t_env			*ft_copy_list(t_env *env)
 {
 	t_env		*tmp;
 	t_env		*head;
-	t_env		*copy;
+	t_env		*new;
 
 	tmp = env;
-	copy = malloc(sizeof(t_env));
-	head = copy;
-	while (tmp)
+	new = ft_memalloc(sizeof(t_env));
+	head = new;
+	new->var = ft_strdup(tmp->var);
+	while (tmp->next)
 	{
-		copy->var = ft_strdup(tmp->var);
-		if (tmp->next)
-			copy->next = ft_memalloc(sizeof(t_env));
-		copy = copy->next;
+		new->next = ft_memalloc(sizeof(t_env));
+		new->next->var = ft_strdup(tmp->next->var);
+		new->next->next = NULL;
+		new = new->next;
 		tmp = tmp->next;
 	}
 	return (head);

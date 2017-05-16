@@ -6,12 +6,11 @@
 /*   By: jecarol <jecarol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 16:18:15 by jecarol           #+#    #+#             */
-/*   Updated: 2017/05/11 17:46:15 by jecarol          ###   ########.fr       */
+/*   Updated: 2017/05/16 22:25:18 by jecarol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-#include <stdio.h>
 
 void		ft_son_exec(char **cmd)
 {
